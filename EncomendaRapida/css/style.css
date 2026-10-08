@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(238, 238, 118);
+    color: aliceblue;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*Cabeçalho*/
+.main-header{
+    background-color: rgb(36, 36, 146);
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgb(238, 238, 118);
+
+}
+
+.main-header h1{
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+
+}
+
+/*Contaner Principal*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/*Seções do card*/
+.card-section {
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.card-section h2 {
+    margin-bottom: 1.2rem;
+    color: blue;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+/*Formulário e Controles*/
+#form-encomenda {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+input, select{
+    padding: 0.75rem;
+    border: 1px solid #cdb5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #2563eb
+}
+input[readonly] {
+    background-color: beige;
+    color: #64748b;
+    cursor: not-allowed;
+}
+.feedback-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.feedback-text.carregando {color:#d97706}
+.feedback-text.sucesso {color:#dc2626}
+.feedback-text.erro {color:#16a34a}
+
+.btn-primary {
+    background-color: #64748b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+}
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+/*Métricas Logísticas- CSS Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px, 1fr));
+    gap: 1rem;
+}
+.metrics-card {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.metrics-card {
+    background-color: #1d4ed8;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.metrics-card h3 {
+    font-size: 0.85rem;
+    color: #cdb5e1;
+    text-transform: uppercase;
+}
+.metrics-card p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e5f06e;
+    margin-top: 0.3rem;
+}
+
+.metrics-card.highlight p {
+    color: #cdb5e1;
+}
+/*Grid de cards de encomendas*/
+.encomendas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+/*Mensagem de painel vazio*/
+.empty-msg {
+    color: #64748b;
+    font-style: italic;
+}
+/*Card solo de encomendas*/
+.card-encomenda {
+    background: green;
+    border: 2px solid #64748b;
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.8rem;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*Diferenca entre modalidades*/
+.card-encomenda.modalidade-expressa{
+    border-left: 6px solid #2563eb;
+
+}
+
+.card-encomenda.modalidade-padrao{
+    border-left: 6px solid #2563eb;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3{
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.badge-modalidade{
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.badge-modalidade.expressa{
+    background-color: #2563eb; color: aliceblue;
+
+}
+.badge-modalidade.padrao {
+    background-color: #2563eb; color: aliceblue;
+}
+
+.card-body p{
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+.card-footer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.btn-action{
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+}
+
+.btn-action:hover{opacity:0.85; }
+.btn-avancar{ background-color: #cdb5e1; color: white;}
+.btn-excluir{ background-color: #cdb5e1; color: white;flex: 0;padding: 0.5rem 0.8rem;}
+
+/*status do badge*/
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-pendente {background-color: steelblue; color: white;}
+.status-transito {background-color: #dc2626; color: white;}
+.status-entregue {background-color: #16a34a; color: white;}
+
+/*Rodape*/
+.main-footer{
+    background-color: #1d4ed8;
+    color: aliceblue;
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: 0.9rem;
+}
+
+/*Responsividade de media queries, smartphones ate 480px*/
+@media(max-width: 480px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .main-header h1{
+        font-size: 1.6rem;
+
+    }
+    .metrics-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .metrics-card.highlight {
+        grid-column: span 2;
+    }
+}
+/*Responsividade para Tablets*/
+@media (min-width: 481px) and (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 769px) {
+    .container{
+        padding: 0;
+    }
+}
+

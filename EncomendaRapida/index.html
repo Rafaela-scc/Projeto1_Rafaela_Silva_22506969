@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RotaExpress - Gestão de Encomendas e Frete</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+        <h1>📦 RotaExpress</h1>
+        <p>Sistema Logístico de Gestão, Triagem e Precificação de Encomendas</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        
+        <!-- Formulário de Cadastro -->
+        <section class="card-section">
+            <h2>Cadastrar Nova Encomenda</h2>
+            <form id="form-encomenda">
+                <div class="form-group">
+                    <label for="destinatario">Nome do Destinatário:</label>
+                    <input type="text" id="destinatario" name="destinatario" placeholder="Ex.: Maria Silva" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cep">CEP de Entrega:</label>
+                        <input type="text" id="cep" name="cep" placeholder="70000-000" maxlength="9" required>
+                        <small id="cep-status" class="feedback-text"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="peso" name="peso" step="0.1" min="0.1" placeholder="Ex.: 2.5" required>
+                    </div>
+                </div>
+
+                <!-- Campos de Endereço Automáticos via ViaCEP -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" readonly placeholder="Preenchido via CEP" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" readonly placeholder="Preenchido via CEP" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cidade-uf">Cidade / UF:</label>
+                        <input type="text" id="cidade-uf" readonly placeholder="Preenchido via CEP" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modalidade">Modalidade de Envio:</label>
+                        <select id="modalidade" name="modalidade" required>
+                            <option value="padrao">Padrão (Econômico)</option>
+                            <option value="expressa">Expressa (Urgente)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-cadastrar" class="btn-primary">Cadastrar Encomenda</button>
+            </form>
+        </section>
+
+        <!-- Painel de Métricas e Indicadores -->
+        <section class="card-section">
+            <h2>Métricas Logísticas</h2>
+            <div class="metrics-grid">
+                <div class="metrics-card">
+                    <h3>Total de Encomendas</h3>
+                    <p id="total-encomendas">0</p>
+                </div>
+                <div class="metrics-card">
+                    <h3>Pendentes</h3>
+                    <p id="total-pendentes">0</p>
+                </div>
+                <div class="metrics-card">
+                    <h3>Em Trânsito</h3>
+                    <p id="total-transito">0</p>
+                </div>
+                <div class="metrics-card">
+                    <h3>Entregues</h3>
+                    <p id="total-entregues">0</p>
+                </div>
+                <div class="metrics-card highlight">
+                    <h3>Faturamento Acumulado</h3>
+                    <p id="total-faturamento">R$ 0,00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listagem de Encomendas -->
+        <section class="card-section">
+            <h2>Painel de Encomendas</h2>
+            <div id="container-encomendas" class="encomendas-grid">
+                <!-- Cards dinâmicos inseridos via JavaScript -->
+                <p class="empty-msg">Nenhuma encomenda cadastrada até o momento.</p>
+            </div>
+        </section>
+
+    </main>
+      <script src="js/script.js" defer></script>
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <p>Projeto 01 - Desenvolvimento Web CEUB | RotaExpress &copy; 2026</p>
+    </footer>
+
+
+</body>
+</html>
