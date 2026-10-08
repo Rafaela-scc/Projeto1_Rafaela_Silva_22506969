@@ -2,16 +2,16 @@
 
 ## Informações
 - **Nome:** Rafaela Silva de Campos Conceição
-- **Matricula: ** 22506969
-- **Disciplina: ** Desenvolvimento Web
-- **Professor: ** Maurizio
+- **Matricula:** 22506969
+- **Disciplina:** Desenvolvimento Web
+- **Professor:** Maurizio
 
 ## Descrição do Projeto EncomendaRapida
 O projeto **- EncomendaRapida-** é uma aplicação Web responsiva para gerenciar, controlar e ter uma precificação automática de fretes.
 Esse projeto foi feito cumprindo as regras do projeto 1, opção A
 
 ## Funcionalidade Principais
-1. **Modelagem Orientada a Objeto (POO em JS): **
+1. **Modelagem Orientada a Objeto (POO em JS):**
    - Classe **Encomenda**: Encapsula dados do destinatário, peso, modalidade, frete e estado privado **#status**.
    - Classe **GerenciadorLogistica**: Gerencia a lista de encomendas, atualizações de estado e faturamento acumulado.
 2. **Integração Assíncrona via Fetch API:**
